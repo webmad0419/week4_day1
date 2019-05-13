@@ -1,0 +1,14 @@
+{
+  "name": "our-first-app",
+  "version": "1.0.0",
+  "description": "First node application for web dev warriors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ger",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
+}

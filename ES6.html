@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        // Object deconstructing 
+        const person = {
+            name: "Ironhacker",
+            age: 25,
+            favoriteMusic: "Metal"
+        }
+
+        const { name, age, favoriteMusic } = person
+
+        console.log(`Hello, ${name}.`)
+        console.log(`You are ${age} years old.`)
+        console.log(`Your favorite music is ${favoriteMusic}.`)
+
+
+
+
+
+
+
+        // Array deconstructing
+        const numbers = ["one", "two", "three", "four", "five"]
+
+        const [first, second, , fourth] = numbers
+
+
+
+
+
+
+        // REST parameters
+        function showOnConsole(firstDrink, ...drinks) {
+
+            console.log('la primera:', firstDrink)
+
+            drinks.forEach(arg => console.log(arg))
+
+            /*
+            for (let elm of arguments) {    // arguments is only on function statement
+                console.log(elm)
+            }
+            */
+        }
+
+        showOnConsole('Coca-cola', 'Burn', 'Cacaolat', 'Red Bull')
+
+
+
+
+
+
+
+        // REST parameters
+        function showMovie(title, year, ...actors) {
+            console.log(`${title} is released in ${year} and in the cast are: ${actors[0]} and ${actors[1]}.`);
+        }
+
+        showMovie("Titanic", "1997", "Leonardo Di Caprio", "Kate Winslet");
+
+
+
+
+
+
+
+        // Arrow functions
+        var count = 11;
+
+        class Counter {
+            constructor() {
+                this.count = 1;
+            }
+
+            countUp() {
+
+                let that = this;
+
+                setInterval(function () {
+                    console.log(that.count++); // <-- Trouble! this points to the global object Window
+                }, 1000);
+            }
+        }
+
+        let myCounter = new Counter();
+        myCounter.countUp();
+
+
+
+
+
+
+
+
+
+        // Default parameters
+        const addTax = (subtotal, tax = .21, discount = 0) => {
+
+            console.log(subtotal * tax - discount)
+        }
+
+
+        addTax(1000)
+        addTax(500)
+        addTax(180, undefined, 10)
+        addTax(180, .1, 10)
+
+
+
+
+    </script>
+</body>
+
+</html>
